@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Jagan's Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: yellow;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #50a3a2;
+            color: white;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+
+        header #branding {
+            float: left;
+        }
+
+        header #branding h1 {
+            color: maroon;
+            margin: 0;
+        }
+
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+
+        #newsletter {
+            padding: 15px;
+            color: #ffffff;
+            background: #35424a
+        }
+
+        #newsletter h1 {
+            float: left;
+        }
+
+        #newsletter form {
+            float: right;
+            margin-top: 15px;
+        }
+
+        #newsletter input {
+            padding: 4px;
+            height: 25px;
+            width: 200px;
+        }
+
+        .button_1 {
+            height: 38px;
+            background: #e8491d;
+            border: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: #ffffff;
+        }
+
+        #main {
+            padding: 20px;
+        }
+
+        #article {
+            float: left;
+            width: 60%;
+        }
+
+        #article h1 {
+            //color: #e8491d;
+        }
+
+        #sidebar {
+            float: right;
+            width: 35%;
+            margin-top: 10px;
+        }
+
+        #sidebar a {
+            color: red;
+        }
+
+        ul {
+            color: cyan;
+        }
+
+        #sidebar .section {
+            padding: 20px;
+            margin-bottom: 10px;
+            background: #35424a;
+            color: #ffffff;
+        }
+
+        .quote {
+            font-style: italic;
+            margin-top: 30px;
+        }
+
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #ffffff;
+            background-color: #e8491d;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Jagan's Blog</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index1.html">Home</a></li>
+                    <li class="current"><a href="about.html">About</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="newsletter">
+        <div class="container">
+            <h1>Subscribe to My Newsletter</h1>
+            <form>
+                <input type="email" placeholder="Enter Email...">
+                <button type="submit" class="button_1">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="main">
+            <div id="article">
+                <h1>About Me</h1>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW_9B_n7L81dVTJjXpPA66ZxTjFw1j6Y6DLwKjifD06E9Zc9M2cQZGeF9b&s=10"
+                    alt="About Me Image">
+                <p>
+                    Hi, I'm Jagan, a passionate developer and database enthusiast. I created this blog to share my knowledge and experiences in database systems, software development, and other tech-related topics.
+                </p>
+                <p>
+                    I have a strong background in database design, implementation, and management. I'm also interested in exploring new technologies and trends in the world of data.
+                </p>
+                <p>
+                    When I'm not working on databases or coding, I enjoy reading, learning, and staying up-to-date with the latest advancements in technology.
+                </p>
+            </div>
+
+            <div id="sidebar">
+                <div class="section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Database Design</a></li>
+                        <li><a href="#">SQL</a></li>
+                        <li><a href="#">NoSQL</a></li>
+                        <li><a href="#">Data Warehousing</a></li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        <li><a href="index.html">Database Recovery Techniques</a></li>
+                        <li><a href="#">Introduction to SQL</a></li>
+                        <li><a href="#">Database Normalization</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; 2025 by Jagan. Content from Coronel and Morris, "Database Systems: Design, Implementation, and
+            Management", 12th Edition.</p>
+    </footer>
+
+</body>
+
+</html>

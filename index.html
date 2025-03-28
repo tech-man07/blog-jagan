@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Recovery Techniques - My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:black;
+color:yellow;
+        }
+img {
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+h1, h2 {
+            color: #007bff;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #50a3a2;
+            color: white;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+
+        header #branding {
+            float: left;
+        }
+
+        header #branding h1 {
+color:maroon;
+            margin: 0;
+        }
+
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+
+        #newsletter {
+            padding: 15px;
+            color: #ffffff;
+            background: #35424a
+        }
+
+        #newsletter h1 {
+            float: left;
+        }
+
+        #newsletter form {
+            float: right;
+            margin-top: 15px;
+        }
+
+        #newsletter input {
+            padding: 4px;
+            height: 25px;
+            width: 200px;
+        }
+
+        .button_1 {
+            height: 38px;
+            background: #e8491d;
+            border: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: #ffffff;
+        }
+
+        #main {
+            padding: 20px;
+        }
+
+        #article {
+            float: left;
+            width: 60%;
+        }
+
+        #article h1 {
+            //color: #e8491d;
+        }
+
+        #sidebar {
+            float: right;
+            width: 35%;
+            margin-top: 10px;
+        }
+
+        #sidebar a{
+            color: red;
+        }
+
+ul{
+color: cyan;
+}
+        #sidebar .section {
+            padding: 20px;
+            margin-bottom: 10px;
+            background: #35424a;
+            color: #ffffff;
+        }
+
+        .quote {
+            font-style: italic;
+            margin-top: 30px;
+        }
+
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #ffffff;
+            background-color: #e8491d;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Jagan's Blog</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="current"><a href="index.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="newsletter">
+        <div class="container">
+            <h1>Support me !!!</h1>
+            <form>
+                <input type="email" placeholder="Enter Email...">
+                <button type="submit" class="button_1">Support</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="main">
+            <div id="article">
+                <h1>Database Recovery Techniques</h1>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT01k4wpjp5kGgb5hmVB1Uql5vWzymzqwTrwYBpmECTadqIrOm7rnI_rxPQ&s=10" alt="Database Recovery" style="width: 100%; height: auto;">
+
+                <p>Hello everyone, I'm Jagan, and welcome to my blog! Today, I'm excited to delve into the crucial topic of database recovery techniques. In our data-driven world, databases are the backbone of countless applications and services, making their reliability and integrity paramount. This blog post will explore the various methods and strategies employed to recover databases from failures and ensure minimal data loss. We'll cover essential concepts like transaction management, concurrency control, and specific recovery procedures, providing you with a comprehensive understanding of how to safeguard your valuable data. So, let's get started and explore the world of database recovery!
+                </p>
+
+                <p>Database recovery is the process of restoring a database to a consistent state following a failure. These failures can range from hardware malfunctions to software errors, and the goal of recovery is to minimize data loss and ensure that the database returns to a usable condition as quickly as possible. 
+                </p>
+
+                <h2>Key Concepts in Database Recovery</h2>
+                <p>To understand database recovery, it's essential to grasp a few fundamental concepts:
+                </p>
+                <ul>
+                    <li><b>Transaction Management:</b> A transaction is a sequence of operations performed as a single logical unit of work. Transactions must adhere to ACID properties (Atomicity, Consistency, Isolation, Durability) to ensure data integrity. </li>
+                    <li><b>Concurrency Control:</b> This involves managing simultaneous access to the database by multiple users to prevent data corruption and maintain consistency. </li>
+                    <li><b>The Transaction Log:</b> A critical component that records all transactions and database modifications. It is essential for recovery operations.
+                    </li>
+                </ul>
+
+                <h2>Recovery Techniques</h2>
+                <p>There are several techniques used to recover a database, including:
+                </p>
+                <ol>
+                    <li><b>Backup and Restore:</b> This involves periodically creating backups of the database and restoring it in case of a failure. Backups can be full, differential, or incremental. </li>
+                    <li><b>Transaction Log-Based Recovery:</b> Using the transaction log to redo or undo transactions to bring the database to a consistent state. This can involve techniques like:
+                        <ul>
+                            <li><b>Rollforward (Redo):</b> Applying the changes from the log to a restored backup. </li>
+                            <li><b>Rollback (Undo):</b> Undoing incomplete transactions to restore database consistency. </li>
+                        </ul>
+                    </li>
+                    <li><b>Checkpoints:</b> These are points in time at which the database is in a consistent state. Checkpoints help to speed up the recovery process by reducing the amount of log that needs to be processed.
+                    </li>
+                </ol>
+
+                <h2>Concurrency Control</h2>
+                <p>Concurrency control is vital in a multi-user database environment. Techniques include:
+                </p>
+                <ul>
+                    <li><b>Locking:</b> Preventing multiple users from modifying the same data simultaneously. </li>
+                    <li><b>Time Stamping:</b> Assigning timestamps to transactions to order them and prevent conflicts. </li>
+                    <li><b>Optimistic Concurrency Control:</b> Assuming that conflicts are rare and checking for them at the end of a transaction. </li>
+                </ul>
+
+                <h2>Database Recovery Management</h2>
+
+                <p>Database recovery management involves various procedures to ensure that a database can be recovered in case of a failure. This includes regular backups, maintaining transaction logs, and having well-defined recovery plans. 
+                </p>
+                <p>In conclusion, database recovery techniques are essential for maintaining data integrity and ensuring the reliability of database systems. By understanding the key concepts and implementing appropriate recovery strategies, organizations can protect their valuable data and minimize the impact of database failures.</p>
+
+                <p class="quote">"The goal of database recovery is to restore a database from an inconsistent state to a previously consistent state."</p>
+            </div>
+
+            <div id="sidebar">
+                <div class="section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Database Design</a></li>
+                        <li><a href="#">SQL</a></li>
+                        <li><a href="#">NoSQL</a></li>
+                        <li><a href="#">Data Warehousing</a></li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        <li><a href="#">Introduction to SQL</a></li>
+                        <li><a href="#">Database Normalization</a></li>
+                        <li><a href="#">Big Data Analytics</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; 2025 by Jagan. Content from Coronel and Morris, "Database Systems: Design, Implementation, and Management", 12th Edition.</p>
+    </footer>
+
+</body>
+
+</html>
